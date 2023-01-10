@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.example.lastmailattendent.helper.GlobalClass"/>
+        <variable name="result"
+            type="com.example.lastmailattendent.responses.ticketlist.Data"/>
+
+        <variable name="viewModel"
+            type="com.example.lastmailattendent.activityviewmodel.TicketsListViewModel"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:id="@+id/contentlyt"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="#1c1a18"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/lyt_1"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1c1a18">
+
+                <RelativeLayout
+                    android:padding="5dp"
+                    android:id="@+id/lyt_header"
+                    android:background="#1c1a18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/ticket_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ticket No."
+                        android:textSize="10sp"
+                        android:fontFamily="@font/gothambook"
+                        android:textColor="@color/txt_color"
+                        android:lineSpacingExtra="-2sp"/>
+
+                    <TextView
+                        android:layout_below="@+id/ticket_no"
+                        android:layout_marginTop="4dp"
+                        android:text="@{'#'+result.ticket_number}"
+                        android:fontFamily="@font/gothambook"
+                        android:id="@+id/tv_ticket_list_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:id="@+id/tv_ticket_list_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/gothambook"
+                        android:lineSpacingExtra="3.3sp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="@{result.current_status.name}"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:changecolor="@{result.current_status.event_style.ticketStatusPills.background}" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyt_header"
+                    android:layout_marginTop="5dp"
+                    android:background="#1f1d1b"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:text="@{result.title}"
+                        android:fontFamily="@font/gothambook"
+                        android:paddingStart="15dp"
+                        android:lineSpacingExtra="1sp"
+                        android:id="@+id/tv_Ticket_list_module_category"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                    <RelativeLayout
+                        android:padding="6dp"
+                        android:layout_width="0dp"
+                        android:layout_centerInParent="true"
+                        android:layout_weight="0.7"
+                        android:layout_marginEnd="-30dp"
+                        android:background="#1f1d1b"
+                        android:layout_height="wrap_content">
+                    <ProgressBar
+                        android:id="@+id/timer_progressbar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="100dp"
+                        android:background="#110f0d"
+                        android:indeterminate="false"
+                        android:padding="45dp"
+                        android:backgroundTint="#1f1d1b"
+                        android:scaleX="-1"
+                        android:layout_centerHorizontal="true"
+                        android:progressDrawable="@drawable/circular_progress_bar" />
+
+                        <TextView
+                            android:id="@+id/tv_timer"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="00:00:00"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/bebas_regular"
+                            android:lineSpacingExtra="-9.3sp"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:background="#1c1a18"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_actived_on"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/gothambook"
+                        android:text="@string/started_on"
+                        android:textColor="@color/txt_color"
+                        android:lineSpacingExtra="-2sp"
+                        android:textSize="12sp"
+
+
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:id="@+id/tv_started_date_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_actived_on"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/gothambook"
+                        android:lineSpacingExtra="6sp"
+                        android:text="@{GlobalClass.dateTimeConverter(result.start_date_time)}"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:fontFamily="@font/gothambook"
+                        android:id="@+id/tv_started_on"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/activity_on"
+                        android:textColor="@color/txt_color"
+                        android:lineSpacingExtra="-2sp"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:text="@{GlobalClass.dateTimeConverter(result.last_activity_on)}"
+                        android:fontFamily="@font/gothambook"
+                        android:lineSpacingExtra="6sp"
+                        android:id="@+id/tv_activated_date_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_started_on"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+                <Button
+                    android:textSize="12sp"
+                    android:text="@{GlobalClass.acceptOrCompleteTkt(result)}"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/gotham_medium"
+                    android:background="@color/brownish_grey"
+                    android:id="@+id/btn_ticket_status"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:onClick="@{(v)-> viewModel.onButtonClicked(v,result)}"
+                    android:layout_height="35dp" />
+          <!--  app:changecolor="@{`#673AB7`}"-->
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

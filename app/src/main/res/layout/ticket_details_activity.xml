@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.lastmailattendent.activityviewmodel.TicketDetailsViewModel" />
+
+        <import type="com.example.lastmailattendent.helper.GlobalClass" />
+
+        <variable
+            name="result"
+            type="com.example.lastmailattendent.responses.ticketlist.Data" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relative_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_cart_lyt"
+                layout="@layout/layout_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background">
+
+                <RelativeLayout
+                    android:id="@+id/main_lyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
+
+                    <RelativeLayout
+                        android:id="@+id/lyt_tkt_dtls"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/lyt_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@color/background">
+
+                            <RelativeLayout
+                                android:id="@+id/lyt_header"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+
+                                android:layout_marginBottom="2dp">
+
+                                <TextView
+                                    android:id="@+id/tv_ticket_number"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentStart="true"
+                                    android:fontFamily="@font/gothambook"
+                                    android:gravity="center_vertical"
+                                    android:text="@{'#'+result.ticket_number}"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_ticket_status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="11dp"
+                                    android:fontFamily="@font/gothambook"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="@{result.current_status.name}"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lyt_header"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/white"
+                                android:backgroundTint="@color/background"
+                                android:orientation="horizontal">
+
+
+                                <RelativeLayout
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="-30dp"
+                                    android:background="@color/background"
+                                    android:padding="6dp">
+
+                                    <ProgressBar
+                                        android:id="@+id/timer_progressbar"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="200dp"
+                                        android:layout_height="100dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:background="@color/background"
+                                        android:indeterminate="false"
+                                        android:padding="45dp"
+                                        android:scaleX="-1"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/circular_progress_bar" />
+
+                                    <TextView
+                                        android:id="@+id/tv_timer"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_centerInParent="true"
+                                        android:text="00:00:00"
+                                        android:textAlignment="center"
+                                        android:textAppearance="?android:attr/textAppearanceSmall"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_Ticket_list_module_category"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:fontFamily="sans-serif"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="15dp"
+                                    android:text="@{result.title}"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <Button
+                            android:visibility="gone"
+                            android:id="@+id/btn_complete"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_below="@+id/lyt_1"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@color/brownish_grey"
+                            android:fontFamily="@font/gotham_medium"
+                            android:includeFontPadding="false"
+                            android:onClick="@{(v)-> viewModel.onButtonClicked(result)}"
+                            android:text="@{GlobalClass.acceptOrCompleteTkt(result)}"
+                            app:changecolor="@{`#673AB7`}" />
+
+                        <View
+                            android:id="@+id/view_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/btn_complete"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/lyt_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/view_1"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@color/home_top_bg"
+                            android:orientation="horizontal"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:fontFamily="@font/gothambook"
+                                android:lineSpacingExtra="-4sp"
+                                android:paddingLeft="10dp"
+                                android:text="@string/serice"
+                                android:textColor="@color/brownish_grey"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_price"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.25"
+                                android:fontFamily="@font/gothambook"
+
+                                android:lineSpacingExtra="-4sp"
+                                android:text="@string/price"
+                                android:textColor="@color/brownish_grey"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_quantity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.25"
+                                android:fontFamily="@font/gothambook"
+                                android:gravity="center_horizontal"
+                                android:lineSpacingExtra="-4sp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/brownish_grey"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tikcet_details_recylcer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lyt_2"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="-3dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@color/home_top_bg"
+                            android:nestedScrollingEnabled="false" />
+
+                        <LinearLayout
+                            android:id="@+id/special_instruction_lyt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tikcet_details_recylcer"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@color/home_top_bg"
+                            android:orientation="vertical">
+                            <!--     <View
+                                     android:id="@+id/view"
+                                     android:background="@color/black"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="1dp"
+                                     android:layout_below="@+id/tikcet_details_recylcer"
+                                     android:layout_marginLeft="10dp"
+                                     android:layout_marginRight="10dp"
+                                     android:layout_marginTop="5dp"
+                                     android:layout_marginBottom="5dp"/>-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/gothambook"
+                                android:text="@string/special_inst"
+                                android:textColor="@color/brownish_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_special_instruction"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/gothambook"
+                                android:padding="2dp"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyt_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/special_instruction_lyt"
+                            android:layout_margin="10dp"
+                            android:background="@color/home_top_bg"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:id="@+id/lyt_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@color/home_top_bg"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <!--  <ImageView
+                                      android:layout_width="0dp"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginStart="10dp"
+                                      android:layout_marginEnd="10dp"
+                                      android:layout_weight="0.1"
+                                      android:src="@drawable/ic_lock_open" />-->
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:fontFamily="@font/gothambook"
+                                    android:gravity="end"
+                                    android:text="@string/booking_details"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/home_top_bg"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gothambook"
+                                    android:lineSpacingExtra="-4sp"
+                                    android:text="@string/guest_name"
+                                    android:textColor="@color/brownish_grey"
+                                    android:textSize="12sp" />
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gothambook"
+                                    android:gravity="end"
+                                    android:lineSpacingExtra="-4sp"
+                                    android:paddingEnd="10dp"
+                                    android:text="@string/room_no"
+                                    android:textColor="@color/brownish_grey"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lyt_4"
+
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="15dp"
+                                android:background="@color/home_top_bg"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_guest_name"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gothambook"
+
+                                    android:text="@{result.booking.guest.first_name + result.booking.guest.last_name}"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+
+
+                                <TextView
+                                    android:id="@+id/tv_guest_room_no"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gothambook"
+                                    android:gravity="end"
+                                    android:paddingEnd="10dp"
+                                    android:text="@{result.room_number}"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyt_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lyt_5"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@color/home_top_bg"
+                            android:orientation="horizontal">
+
+                            <!--    <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="0.1"
+                                    android:src="@drawable/ic_card_travel" />
+                    -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/gothambook"
+                                android:lineSpacingExtra="-8sp"
+                                android:paddingStart="10dp"
+                                android:text="@string/ticket_details"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/ticket_status_adapter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lyt_6"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/home_top_bg"
+                            android:nestedScrollingEnabled="false"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="10dp" />
+                    </RelativeLayout>
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

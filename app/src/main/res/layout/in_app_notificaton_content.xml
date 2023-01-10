@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/et_border_brown">
+
+    <LinearLayout
+        android:id="@+id/reset_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/home_top_bg"
+        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/brownish_grey"
+
+    android:orientation="horizontal">
+    <TextView
+        android:padding="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Ticket ID"
+        android:fontFamily="@font/gothambook"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_ticket_no"
+        android:padding="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/gothambook"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+</LinearLayout>
+
+
+<LinearLayout
+    android:id="@+id/lvt_assignee"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal">
+    <TextView
+        android:layout_margin="15dp"
+        android:text="Assigned To :"
+        android:textColor="@color/white"
+        android:fontFamily="@font/gotham_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/tv_assigned_to"
+        android:layout_margin="15dp"
+        android:fontFamily="@font/gotham_medium"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_margin="15dp"
+                android:text="Current Status :"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/tv_ticket_status"
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:fontFamily="@font/gotham_medium"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

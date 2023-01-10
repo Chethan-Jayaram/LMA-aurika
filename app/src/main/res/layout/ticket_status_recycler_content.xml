@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.example.lastmailattendent.helper.GlobalClass"/>
+        <variable name="ticket"
+            type="com.example.lastmailattendent.responses.ticketlist.TicketActivity"/>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/home_top_bg"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/lyt_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lyt_6"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+          android:background="@color/home_top_bg">
+
+            <TextView
+                android:id="@+id/tv_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/gothambook"
+                android:text="@string/activity_on"
+                android:textColor="@color/brownish_grey"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+
+                android:id="@+id/tv_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_activity"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/gothambook"
+                android:textColor="@color/white"
+                android:text="@{GlobalClass.dateTimeConverter(ticket.activity_on)}"
+                android:textSize="14sp" />
+
+            <TextView
+                android:fontFamily="@font/gothambook"
+                android:textColor="@color/white"
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="2dp"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:changecolor="@{ticket.status.event_style.ticketStatusPills.background}"
+                android:text="@{ticket.status.name}"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+</layout>
+

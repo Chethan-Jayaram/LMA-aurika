@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.lastmailattendent.responses.user.User" />
+        <variable
+            name="viewModel"
+            type="com.example.lastmailattendent.activityviewmodel.EditProfileViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/toolbar_cart_lyt"
+            layout="@layout/layout_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <ScrollView
+            android:background="@color/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <LinearLayout
+                    android:id="@+id/lyt_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:padding="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColorHint="@color/brownish_grey">
+
+                            <EditText
+                                android:id="@+id/et_fst_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/gotham_medium"
+                                android:hint="@string/first_name"
+                                android:includeFontPadding="false"
+                                android:paddingStart="5dp"
+                                android:singleLine="true"
+                                android:text="@{user.result.first_name}"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/brownish_grey" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColorHint="@color/brownish_grey">
+
+                            <EditText
+                                android:id="@+id/et_lst_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:fontFamily="@font/gotham_medium"
+                                android:hint="@string/last_name"
+                                android:includeFontPadding="false"
+                                android:paddingStart="5dp"
+                                android:singleLine="true"
+                                android:text="@{user.result.last_name}"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/brownish_grey" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+<!--                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:fontFamily="@font/gotham_medium"
+                                android:includeFontPadding="false"
+                                android:text="@string/gender"
+                                android:textColor="@color/brownish_grey"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/gender_spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/et_border_brown"
+                                android:drawableEnd="@drawable/arrow_drop_down"
+                                android:editable="false"
+                                android:entries="@array/Gender"
+
+                                android:fontFamily="@font/gotham_medium"
+                                android:gravity="center_vertical"
+                                android:hint="@string/gender"
+                                android:includeFontPadding="false"
+                                android:padding="5dp"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+
+                                tools:ignore="RtlSymmetry" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:fontFamily="@font/gotham_medium"
+                                android:includeFontPadding="false"
+                                android:text="@string/marital_status"
+                                android:textColor="@color/brownish_grey"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/status_spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/et_border_brown"
+                                android:drawableEnd="@drawable/arrow_drop_down"
+                                android:editable="false"
+                                android:entries="@array/Marital_Status"
+                                android:fontFamily="@font/gotham_medium"
+                                android:gravity="center_vertical"
+                                android:hint="@string/marital_status"
+                                android:includeFontPadding="false"
+                                android:padding="5dp"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                tools:ignore="RtlSymmetry" />
+                        </LinearLayout>
+                    </LinearLayout>-->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:textColorHint="@color/brownish_grey">
+
+                        <EditText
+                            android:id="@+id/et_mob_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:editable="false"
+                            android:fontFamily="@font/gotham_medium"
+                            android:hint="@string/mobile_number"
+                            android:includeFontPadding="false"
+                            android:paddingStart="5dp"
+                            android:text="@{user.result.profile.contact_number}"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/brownish_grey" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:textColorHint="@color/brownish_grey">
+
+                        <EditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:editable="false"
+                            android:fontFamily="@font/gotham_medium"
+                            android:hint="@string/profile_email"
+                            android:includeFontPadding="false"
+                            android:paddingStart="5dp"
+                            android:text="@{user.result.email}"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/brownish_grey"
+                            tools:ignore="RtlSymmetry" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btn_edit_profile"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="30dp"
+                        android:background="@color/brownish_grey"
+                        android:fontFamily="@font/gotham_medium"
+                        android:includeFontPadding="false"
+                        android:textSize="14sp"
+                        android:text="@string/edit_profile" />
+                </LinearLayout>
+                <ProgressBar
+                    android:visibility="gone"
+                    android:id="@+id/profile_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

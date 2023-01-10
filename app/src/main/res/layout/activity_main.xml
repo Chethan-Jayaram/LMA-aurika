@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="loginModel"
+            type="com.example.lastmailattendent.activityviewmodel.LoginViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/coorg">
+            <TextView
+                android:fontFamily="@font/bebas_regular"
+                android:includeFontPadding="false"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/btn_bg"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activity.LoginActivity">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_margin="10dp"
+                android:id="@+id/user_lyt"
+                android:textColorHint="@color/brownish_grey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+
+                    android:text="@={loginModel.name}"
+                    android:fontFamily="@font/gotham_medium"
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_name"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/white"
+                    android:lineSpacingExtra="-2sp"
+                    android:textSize="16sp"
+                    android:singleLine="true"
+                    app:backgroundTint="@color/brownish_grey"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_lyt"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/user_lyt"
+                android:textColorHint="@color/brownish_grey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:text="@={loginModel.password}"
+                    android:fontFamily="@font/gotham_medium"
+                    android:id="@+id/et_password"
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:paddingStart="5dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:lineSpacingExtra="-2sp"
+                    app:backgroundTint="@color/brownish_grey"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+
+            <Button
+                android:onClick="@{loginModel::onSignInButtonClick}"
+                android:id="@+id/tv_sigin_in"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/password_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:background="@color/brownish_grey"
+                android:lineSpacingExtra="-4sp"
+                android:textColor="@color/black"
+                android:text="@string/sign_in"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>
+

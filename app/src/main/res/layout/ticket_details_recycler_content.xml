@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lyt_2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:fontFamily="@font/gotham_medium"
+        android:id="@+id/tv_service"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:fontFamily="@font/gotham_medium"
+        android:paddingStart="2dp"
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:fontFamily="@font/gotham_medium"
+        android:id="@+id/tv_quantity"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="btn_color">#2F103F</color>
+    <color name="vlight_gray">#ececec</color>
+    <color name="please_bar">#d8cbb7</color>
+    <color name="font_color_purple">#3e1151</color>
+    <color name="floating_btn">#1e0028</color>
+    <color name="cus_blue">#25468B</color>
+    <color name="app_real_black">#0e0e0e</color>
+    <color name="white">#FFFFFF</color>
+    <color name="yellow">#dfdf58</color>
+    <color name="fuchsia">#FF00FF</color>
+    <color name="red">#FF0000</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="gray">#d7d5d5</color>
+    <color name="light_gray">#a3a1a1</color>
+    <color name="dark_gray">#6e6b6b</color>
+    <color name="olive">#808000</color>
+    <color name="purple">#673AB7</color>
+    <color name="maroon">#800000</color>
+    <color name="aqua">#00FFFF</color>
+    <color name="lime">#00FF00</color>
+    <color name="teal">#008080</color>
+    <color name="green">#008000</color>
+    <color name="lightgreen">#90EE90</color>
+    <color name="blue">#0000FF</color>
+    <color name="navy">#000080</color>
+    <color name="black">#000000</color>
+    <color name="orange">#FF6F00</color>
+    <color name="dark_orange">#BD6F45</color>
+    <color name="dark_brown">#522f18</color>
+    <color name="light_brown">#e15f3d</color>
+    <color name="golden">#FFD700</color>
+    <color name="pink">#ffeac9</color>
+    <color name="cream">#f8f1cd</color>
+    <color name="yelloes_orange">#8D6704</color>
+    <color name="quick_silver">#a6a6a6</color>
+    <color name="background">#0f0e0d</color>
+    <color name="btn_bg">#857d6b</color>
+    <color name="home_top_bg">#1c1a18</color>
+    <color name="brownish_grey">#857d6b</color>
+    <color name="transparent">#00000000</color>
+    <color name="dialoug_bg">#aaa49d</color>
+    <color name="center_color">#ffda04</color>
+    <color name="start_color">#009100</color>
+    <color name="end_color">#ff0000</color>
+
+
+    <color name="txt_color">#979796</color>
+    <color name="emergency_bg_color">#a31b28</color>
+
+
+</resources>

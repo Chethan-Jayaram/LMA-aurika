@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="23.5dp"
+    android:background="#554f40">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile_photo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10dp"
+        android:padding="4dp"
+        android:src="@drawable/profile_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_et_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/arrow_right"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/gotham_medium"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_profile_photo"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_name"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/gotham_medium"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+
+        app:layout_constraintEnd_toEndOf="@+id/user_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/home_top_bg"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_cart"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="0dip"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:id="@+id/menu_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_weight="5">
+
+            <!-- <ImageView
+                 android:id="@+id/btn_back"
+                 android:layout_width="30dp"
+                 android:layout_height="30dp"
+                 android:layout_centerVertical="true"
+                 android:layout_marginStart="8dp"
+                 android:layout_marginTop="8dp"
+                 android:layout_marginBottom="8dp"
+                 android:padding="2dp"
+                 android:src="@drawable/ic_arrow_back" />
+
+             <ImageView
+                 android:id="@+id/nav_menu"
+                 android:layout_width="30dp"
+                 android:layout_height="30dp"
+                 android:layout_centerVertical="true"
+                 android:layout_marginStart="8dp"
+                 android:layout_toEndOf="@+id/btn_back"
+                 android:padding="2dp"
+                 android:src="@drawable/ic_nav_menu" />
+ -->
+            <ImageView
+                android:id="@+id/nav_menu"
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_menu_black_24dp" />
+
+            <TextView
+                android:layout_toRightOf="@+id/nav_menu"
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/gothambook"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:paddingBottom="2dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+   <!--         <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="1dp"
+                android:padding="8dp"
+                 />
+-->
+
+
+
+            <ImageView
+                android:id="@+id/iv_more"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="1dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_more" />
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:id="@+id/relative_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.HomeActivity">
+
+        <include
+            android:id="@+id/toolbar_cart_lyt"
+            layout="@layout/layout_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:background="@color/background"
+            android:layout_below="@+id/toolbar_cart_lyt"
+            android:id="@+id/swipe_to_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:paddingBottom="20dp"
+                android:id="@+id/active_tickets_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layoutAnimation="@anim/layout_animation_slide_right"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <ProgressBar
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</layout>
+

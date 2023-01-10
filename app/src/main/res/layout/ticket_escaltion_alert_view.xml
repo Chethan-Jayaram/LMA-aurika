@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/et_border_brown">
+
+
+    <LinearLayout
+        android:id="@+id/reset_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/escalated_ticket_reason"
+            android:fontFamily="@font/gothambook"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:background="@color/brownish_grey"
+            android:textSize="20sp" />
+
+
+        <EditText
+            android:id="@+id/et_reason"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="top"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="@string/enter_your_reason_here"
+            android:inputType="textNoSuggestions"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gotham_light"
+            android:textColorHint="@color/gray"
+            android:background="@drawable/et_border_white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/reset_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/btn_submit"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_vertical"
+            android:text="@string/submit"
+            android:fontFamily="@font/gothambook"
+            android:textAlignment="center"
+            android:background="@color/brownish_grey"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+          android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toStartOf="@+id/btn_submit"
+            android:gravity="center_vertical"
+            android:text="@string/cancel"
+            android:textAlignment="center"
+            android:fontFamily="@font/gothambook"
+            android:background="@color/brownish_grey"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+</RelativeLayout>

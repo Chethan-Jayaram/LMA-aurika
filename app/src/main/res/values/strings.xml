@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Last Mile Attendent</string>
+    <string name="user_name">User Name</string>
+    <string name="experience_one">Experience One</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+
+    <string name="started_on">Started On</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="booking_details">Booking Details</string>
+    <string name="guest_name">Guest Name</string>
+    <string name="room_no">Room No</string>
+    <string name="ticket_details">Ticket Details</string>
+    <string name="activity_on">Activity On</string>
+    <string name="serice">Service</string>
+    <string name="special_instructions">Any special Instructions?</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_your_reason_here">Enter Your Reason Here..!!</string>
+    <string name="escalated_ticket_reason">Escalated Ticket Reason</string>
+    <string name="complete">Complete</string>
+    <string name="logout">Logout</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="gender">Gender</string>
+    <string name="marital_status">Martial Status</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="profile_email">Email</string>
+    <string name="edit_profile">Update Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="history">History</string>
+    <string name="special_inst">Special instructions :</string>
+
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="Marital_Status">
+        <item>Single</item>
+        <item>Married</item>
+    </string-array>
+
+</resources>
